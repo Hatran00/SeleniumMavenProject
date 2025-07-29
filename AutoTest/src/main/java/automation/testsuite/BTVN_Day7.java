@@ -17,6 +17,5 @@ public class BTVN_Day7 {
         for (int i = 0; i < nhanVien.length; i++) {
             System.out.println(nhanVien[i]);
         }
-
     }
 }
