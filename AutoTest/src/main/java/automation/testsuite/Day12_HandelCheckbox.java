@@ -4,6 +4,7 @@ import automation.common.CT_PageURL;
 import automation.common.CommonBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 public class Day12_HandelCheckbox extends CommonBase {
@@ -27,5 +28,9 @@ public class Day12_HandelCheckbox extends CommonBase {
             music.click();
             System.out.println("Checkbox music has been selected");
         }
+    }
+    @AfterMethod
+    public void closeBrowser(){
+        driver.close();
     }
 }

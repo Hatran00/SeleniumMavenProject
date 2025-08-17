@@ -57,8 +57,10 @@ public class LoginTest_BTVN13 extends CommonBase {
         LoginPage_BTVN13 test = new LoginPage_BTVN13(driver);
         test.LoginFunction("admin@gmail.com", "12345678");
         WebElement loginSuccess = driver.findElement(By.xpath("//a[@id='dropdownMenuLink']"));
+
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("toast")));
+
         loginSuccess.click();
         test.logout();
         String actual = driver.getCurrentUrl();

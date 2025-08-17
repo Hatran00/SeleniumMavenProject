@@ -5,6 +5,7 @@ import automation.common.CommonBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -36,5 +37,9 @@ public class HandleDropdownlist extends CommonBase {
         String actualText3 = catgSelect.getFirstSelectedOption().getText();
         assertEquals(actualText3, "Programming courses");
 
+    }
+    @AfterMethod
+    public void closeBrowser(){
+        driver.close();
     }
 }

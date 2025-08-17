@@ -5,6 +5,7 @@ import automation.common.CommonBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -69,5 +70,9 @@ public class BTVN_Day12 extends CommonBase {
         } else{
             System.out.println("Radio is disable");
         }
+    }
+    @AfterMethod
+    public void closeBrowser(){
+        driver.close();
     }
 }

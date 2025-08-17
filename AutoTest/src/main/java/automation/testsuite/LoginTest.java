@@ -5,6 +5,7 @@ import automation.common.CommonBase;
 import automation.pageLocator.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertTrue;
@@ -44,5 +45,9 @@ public class LoginTest extends CommonBase {
         WebElement textErrorEmail = driver.findElement(By.id("txtLoginUsername-error"));
         WebElement textErrorPass = driver.findElement(By.id("txtLoginPassword-error"));
         assertTrue(textErrorEmail.isDisplayed() && textErrorPass.isDisplayed());
+    }
+    @AfterMethod
+    public void closeBrowser(){
+        driver.close();
     }
 }
