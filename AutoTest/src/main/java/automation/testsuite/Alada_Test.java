@@ -1,7 +1,7 @@
 package automation.testsuite;
 
-import automation.common.CT_PageURL;
 import automation.common.CommonBase;
+import automation.constant.CT_PageURL;
 import automation.pageLocator.Alada_Factory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;

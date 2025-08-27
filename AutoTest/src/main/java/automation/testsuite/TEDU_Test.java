@@ -1,12 +1,15 @@
 package automation.testsuite;
 
-import automation.common.CT_PageURL;
 import automation.common.CommonBase;
+import automation.constant.CT_PageURL;
 import automation.pageLocator.TEDU_PageFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 import static org.testng.Assert.assertTrue;
 
@@ -35,10 +38,25 @@ public class TEDU_Test extends CommonBase {
     @Test
     public void searchSuccessfully() throws InterruptedException {
         loginSuccessfully();
-        tedu.search("ASP Net");
-        Thread.sleep(3000);
-        assertTrue(driver.findElement(By.xpath("//a[text()='Bài 52: Gửi phản hồi và gửi mail trong" +
-                " ASP NET sử dụng SMTP']")).isDisplayed());
+        tedu.search("Web API");
+        Thread.sleep(5000);
+        List<WebElement> titleSearchResult = driver.findElements(By.xpath("//div[@class='post-title']/h3/a"));
+        List<WebElement> contentSearchResult = driver.findElements(By.xpath("//div[@class='post-title']/p"));
+        System.out.println("actualTitle is: " + titleSearchResult.size());
+        System.out.println("actualContent is: " + contentSearchResult.size());
+        for (WebElement titleElement : titleSearchResult) {
+            String actualTitle= titleElement.getText();
+            if(!actualTitle.contains("Web API")){
+                for (WebElement contentElement : contentSearchResult){
+                    String actualContent= contentElement.getText();
+                    System.out.println("actualContent is: " + actualContent);
+                    assertTrue(actualContent.contains("Web API"));
+                }
+            } else {
+                System.out.println("actualTitle is: " + actualTitle);
+                assertTrue(actualTitle.contains("Web API"));
+            }
+        }
     }
     @AfterMethod
     public void closeBrowser(){

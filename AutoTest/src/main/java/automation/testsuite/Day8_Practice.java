@@ -1,7 +1,7 @@
 package automation.testsuite;
 
-import automation.common.CT_PageURL;
 import automation.common.CommonBase;
+import automation.constant.CT_PageURL;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
