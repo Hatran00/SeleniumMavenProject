@@ -41,7 +41,6 @@ public class Alada_Test extends CommonBase {
     public void loginSuccessfully(){
         Alada_Factory login = new Alada_Factory(driver);
         login.loginFunction(baseEmail, "123456");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         WebElement khoaHocCuaToi = driver.findElement(By.xpath("(//a[text()='Khóa học của tôi'])[1]"));
         assertTrue(khoaHocCuaToi.isDisplayed());
     }

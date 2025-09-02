@@ -11,4 +11,5 @@ public class CT_PageURL {
     public static String tedu_URL = "https://tedu.com.vn/dang-nhap.html";
     public static String alert_URL1 = "https://demo.automationtesting.in/Alerts.html";
     public static String alert_URL2 = "https://demo.guru99.com/test/delete_customer.php";
+    public static String alert_URL3 = "http://seleniumpractise.blogspot.com/2019/01/alert-demo.html";
 }
