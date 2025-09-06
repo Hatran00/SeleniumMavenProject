@@ -57,10 +57,16 @@ public class CommonBase {
     }
     //wrap phuong thuc click
     public void click(By locator){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         wait.until(ExpectedConditions.elementToBeClickable(locator));
         WebElement element = getElementPresentDOM(locator);
         element.click();
+    }
+    public void clickByJS(By locator)
+    {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement element = driver.findElement(locator);
+        js.executeScript("arguments[0].click();", element);
     }
     //wrap phuong thuc type
     public void type(By locator, String value){

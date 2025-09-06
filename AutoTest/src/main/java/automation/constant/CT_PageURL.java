@@ -12,4 +12,7 @@ public class CT_PageURL {
     public static String alert_URL1 = "https://demo.automationtesting.in/Alerts.html";
     public static String alert_URL2 = "https://demo.guru99.com/test/delete_customer.php";
     public static String alert_URL3 = "http://seleniumpractise.blogspot.com/2019/01/alert-demo.html";
+    public static String guru99_URL = "https://demo.guru99.com/popup.php";
+    public static String codeStar_URL2 = "https://codestar.vn/";
+    public static String mediaMart_URL = "https://mediamart.vn/";
 }

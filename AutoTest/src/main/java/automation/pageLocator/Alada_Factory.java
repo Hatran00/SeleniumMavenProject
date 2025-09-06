@@ -42,9 +42,6 @@ public class Alada_Factory {
         btnLogin.click();
     }
     public void logoutFunction(){
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        wait.until(ExpectedConditions.alertIsPresent());
-//        driver.switchTo().alert().accept();
         imageAvatar.click();
         btnlogout.click();
     }
