@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite">
+
+	<test name="Regession test on Chrome">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="automation.testsuite.BTVN1_Day18" />
+			<class name="automation.testsuite.BTVN2_Day18" />
+		</classes>	
+	</test>
+
+	<test name="Regession test on Edge">
+		<parameter name="browser" value="edge"></parameter>
+		<classes>
+			<class name="automation.testsuite.BTVN1_Day18" />
+			<class name="automation.testsuite.BTVN2_Day18" />
+		</classes>
+	</test>
+
+	<test name="Regession test on Firefox">
+		<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class name="automation.testsuite.BTVN1_Day18" />
+			<class name="automation.testsuite.BTVN2_Day18" />
+		</classes>
+	</test>
+
+</suite> <!-- Suite -->

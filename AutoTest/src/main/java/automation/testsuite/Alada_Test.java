@@ -8,9 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 import java.util.Random;
@@ -34,13 +32,15 @@ public class Alada_Test extends CommonBase {
         return baseEmail;
     }
     @BeforeMethod
-    public void openBrowser(){
-        driver = initFirefoxDriver(CT_PageURL.alada_URL);
+    @Parameters("browser")
+    public void openBrowser(@Optional("chrome") String browser){
+        driver = setupDriver(browser);
+        driver.get(CT_PageURL.alada_URL);
     }
     @Test (priority = 2)
     public void loginSuccessfully(){
         Alada_Factory login = new Alada_Factory(driver);
-        login.loginFunction(baseEmail, "123456");
+        login.loginFunction("tranthihaiha660@gmail.com", "123456");
         WebElement khoaHocCuaToi = driver.findElement(By.xpath("(//a[text()='Khóa học của tôi'])[1]"));
         assertTrue(khoaHocCuaToi.isDisplayed());
     }
@@ -78,6 +78,6 @@ public class Alada_Test extends CommonBase {
     }
     @AfterMethod
     public void closeBrowser(){
-        driver.close();
+        closeDriver();
     }
 }

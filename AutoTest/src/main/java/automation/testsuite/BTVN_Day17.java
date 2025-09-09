@@ -17,12 +17,11 @@ import static org.testng.Assert.assertTrue;
 public class BTVN_Day17 extends CommonBase {
     @BeforeMethod
     public void openBrowser(){
-        driver = initChromeDriver(CT_PageURL.mediaMart_URL);
+        driver = initEdgeDriver(CT_PageURL.mediaMart_URL);
     }
     @Test
     public void zaloChat(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement mediaFrame = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("easychatgpt-widget")));
+        WebElement mediaFrame = getElementPresentDOM2(By.id("easychatgpt-widget"),10);
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("document.getElementById('easychatgpt-widget').style.display='none';");
